@@ -1,70 +1,80 @@
-import React from 'react'
-import assets from '../assets/assets'
-import { motion } from "framer-motion"
+import React from "react";
+import assets from "../assets/assets";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div
-      id='hero'
-      className='flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-white'
+    <section
+      id="home"
+      className="relative w-full overflow-hidden px-4 sm:px-8 lg:px-16 xl:px-24 py-16 sm:py-24 text-gray-700 dark:text-white"
     >
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
-    
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        viewport={{ once: true }}
-        className='inline-flex items-center gap-2 border border-gray-300 p-1.5 pr-4 rounded-full'
-      >
-        <img className='w-20' src={assets.group_profile} alt='' />
-        <p className='text-xs font-medium'>Trusted by 10k+ people</p>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="inline-flex items-center gap-2 border border-gray-300 dark:border-white/20 rounded-full px-3 py-2 mb-6"
+        >
+          <img
+            className="w-16 sm:w-20"
+            src={assets.group_profile}
+            alt=""
+          />
+          <p className="text-[11px] sm:text-sm font-medium">
+            Trusted by 10k+ people
+          </p>
+        </motion.div>
 
-   
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        viewport={{ once: true }}
-        className='text-4xl sm:text-5xl md:text-6xl xl:text-[84px] font-medium xl:leading-[95px] max-w-5xl'
-      >
-        Turning imagination into{' '}
-        <span className='bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent'>
-          digital
-        </span>{' '}
-        impact.
-      </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="font-semibold leading-tight max-w-5xl text-4xl sm:text-5xl md:text-6xl xl:text-7xl"
+        >
+          Turning imagination into{" "}
+          <span className="bg-gradient-to-r from-[#5044E5] to-[#4d8cea] bg-clip-text text-transparent">
+            digital
+          </span>{" "}
+          impact.
+        </motion.h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        viewport={{ once: true }}
-        className='text-sm sm:text-lg font-medium text-gray-500 dark:text-white/75 max-w-lg pb-3'
-      >
-        Creating meaningful connections and turning big ideas into interactive digital experiences
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-gray-500 dark:text-white/70 leading-relaxed"
+        >
+          Creating meaningful connections and transforming bold ideas into
+          immersive digital experiences.
+        </motion.p>
 
-      
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        viewport={{ once: true }}
-        className='relative'
-      >
-        <img src={assets.hero_img} alt="" className='w-full max-w-6xl' />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative mt-12 w-full flex justify-center"
+        >
+          <img
+            src={assets.hero_img}
+            alt=""
+            className="w-full max-w-6xl object-contain"
+          />
 
-        <img
-          src={assets.bgImage1}
-          alt=""
-          className='absolute -top-40 -right-40 sm:-top-96 sm:-right-72 -z-10 dark:hidden'
-        />
-      </motion.div>
+          <img
+            src={assets.bgImage1}
+            alt=""
+            className="absolute hidden sm:block -top-40 -right-40 lg:-top-72 lg:-right-52 -z-10 opacity-80 dark:hidden"
+          />
+        </motion.div>
 
-    </div>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;
