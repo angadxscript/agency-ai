@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Navbar from "./components/Navbar"
 import Hero from './components/Hero'
 import Trustedby from './components/Trustedby'
-import Service from './components/service'
+import Service from './components/Service'
 import OurWork from './components/OurWork'
 import Team from './components/Team'
 import ContactUs from './components/ContactUs'
