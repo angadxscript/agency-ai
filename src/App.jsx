@@ -10,28 +10,20 @@ import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
-    <div className="bg-white dark:bg-black min-h-screen overflow-x-hidden">
-
-      <Toaster />
+    <div className="min-h-screen w-full overflow-x-hidden bg-white text-gray-900 dark:bg-black dark:text-white">
+      <Toaster position="top-center" />
 
       <Navbar theme={theme} setTheme={setTheme} />
 
-      <main className="space-y-20 sm:space-y-28">
+      <main className="w-full overflow-x-hidden">
         <Hero />
         <Trustedby />
         <Service />
@@ -41,7 +33,6 @@ const App = () => {
       </main>
 
       <Footer theme={theme} />
-      
     </div>
   );
 };
