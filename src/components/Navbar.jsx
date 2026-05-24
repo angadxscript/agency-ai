@@ -17,18 +17,6 @@ const Navbar = ({ theme, setTheme }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (sidebarOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [sidebarOpen]);
-
   return (
     <>
       <motion.nav
@@ -115,7 +103,7 @@ const Navbar = ({ theme, setTheme }) => {
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className="absolute right-0 top-0 h-full w-[80%] max-w-xs bg-white dark:bg-gray-900 text-gray-800 dark:text-white shadow-2xl px-6 py-6"
+              className="absolute right-0 top-0 h-full w-[80%] max-w-xs bg-white dark:bg-gray-900 text-gray-800 dark:text-white shadow-2xl px-6 py-6 overflow-y-auto"
             >
 
               <div className="flex items-center justify-between mb-10">
